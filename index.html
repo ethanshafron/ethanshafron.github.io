@@ -1,456 +1,480 @@
-<!DOCTYPE HTML>
-<!--
-	Ethan Shafron
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Ethan Shafron</title>
-		<meta charset="utf-8" />
-		<meta name="google-site-verification" content="RIKO0gXB_fbFGR_R6k4a2QmeaagqkWeGWc6fwO8qHqc" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="RIKO0gXB_fbFGR_R6k4a2QmeaagqkWeGWc6fwO8qHqc" />
+  <title>Ethan Shafron</title>
+  <meta name="description" content="Ethan Shafron — PhD Candidate, Systems Ecology, University of Montana. Imaging spectroscopy, plant functional traits, remote sensing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
 
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/headshot.jpg" alt="" /></span>
-					<h1 id="logo"><a href="#">Ethan Shafron</a></h1>
-					<p>Spatial Ecology, Applied Remote Sensing, Scientific Computing, Environmental Sciences<br></br>
-					   <a href="https://github.com/ethanshafron/">Github</a>
-				</p>
-				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#about" class="active">About</a></li>
-						<li><a href="#tech">Technical Skills</a></li>
-						<li><a href="#other">Other Skills</a></li>
-						<li><a href="#cv">Curriculum Vitae</a></li>
-					</ul>
-				</nav>
-			</section>
+<!-- ============================================================
+     NAV
+     Add a link here + a matching <section id="..."> below
+     to create a new page section.
+     ============================================================ -->
+<nav id="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#about" class="nav-brand">Ethan Shafron</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+    </ul>
+    <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
 
-				<!-- Main -->
-					<div id="main">
+<main>
 
-						<!-- One -->
-							<section id="about">
-								<div class="image main" data-position="center">
-									<img src="images/banner_glac.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2>Hi there!</h2>
-									</header>
-									<p>My name is Ethan Shafron. I am a Data Analyst with the <a href="https://www.umt.edu/spatial-analysis-lab/about-us/default.php">University of Montana Spatial Analysis Lab</a> using remote sensing and other computational methods to answer ecological questions.<br></br>
-									In the summer you can find me out in the field leading crews on ecological projects across the state of Montana.
-								</p>
-								</div>
-							</section>
+<!-- ============================================================
+     ABOUT
+     Edit: bio paragraphs, education entries, and link buttons.
+     ============================================================ -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout">
 
-						<!-- Two -->
-							<section id="tech">
-								<div class="container">
-									<h3>Technical Skills</h3>
-									<p>I am interested in scientific computing and nutritious applications of remote sensing data. My go-to tool is Python, but I frequently also use R and GUI software when applicable.</p>
-									<ul>
-										<li> Geospatial programming with Python (GDAL, numpy, sklearn, scipy, skimage, rasterio, Shapely, Proj, pandas)</li>
-										<li> Statistical inference with R (Tidyverse, lme4, JAGS, Raster, sf)</li>
-										<li> Basic raster processing with Julia (ArchGDAL)</li>
-										<li> Command line GDAL/OGR for geospatial data manipulation</li>
-										<li> Linux utilities (wget, sed, awk, find, grep, GNU parallel, vim, tmux)</li>
-										<li> Git for version control</li>
-										<li> High performance computing, primarily with Slurm</li>
-										<li> Rudimentary working knowledge of web development</li>
-										<li> Basic JavaScript for use in Google Earth Engine</li>
-										<li> Advanced GIS skills with ArcMap 10.x, ArcGIS Pro 2.x, and QGIS 3.x</li>
-										<li> Basic species distribution modeling with MaxEnt</li>
-									</ul>
-								</div>
-							</section>
+      <div class="about-text">
+        <p class="about-tagline">
+          PhD Candidate, Systems Ecology · University of Montana<br>
+          Scientific Research Affiliate · NASA Jet Propulsion Laboratory
+        </p>
 
-						<!-- Three -->
-							<section id="other">
-								<div class="container">
-									<h3>Other Skills</h3>
-									<p>In addition to spending a good chunk of time behind a screen, I also spend a good amount of time doing other things.</p>
-									<ul>
-										<li> <a href="https://mtnhp.org/">Plant ID using dichotomous keys and/or field guides (particularly in the Northern Great Plains and Northern Rocky Mountains)</a> </li>
-										<li> <a href="https://uni-freiburg.de/en/">German language (speaking, writing, reading - effective operational proficiency)</a> </li>
-										<li> <a href="https://flatheadavalanche.org/">AIARE 1 Avalanche Training course</a> </li>
-										<li> <a href="https://coloradotrail.org/">Backcountry travel planning and coordinating</a> </li>
-										<li> <a href="https://www.nps.gov/rlc/crown/citizen-science.htm">Survey design and testing</a> </li>
-										<li> <a href="https://open.spotify.com/artist/75UZ4qsnf6mj9nfhNu9vwL?si=qcF6JOUOQ4-Slpl-7lCkFQ">Competent drummer, with over 12 years experience, 9 years of gigging experience </a> </li>
-									</ul>
-								</div>
-							</section>
+        <div class="about-bio">
+          <p>
+            I use airborne and satellite imaging spectroscopy to characterize plant functional traits
+            and ecosystem processes at landscape to continental scales. My dissertation work integrates
+            hyperspectral remote sensing, field ecology, and Bayesian modeling to study forest carbon dynamics
+            and photosynthesis-growth coupling.
+          </p>
+          <p>
+            I'm a member of the
+            <a href="https://www.umt.edu/global-climate-ecology-lab/">Global Climate and Ecology Lab</a>
+            at the University of Montana under Dr. Ashley Ballantyne.
+          </p>
+        </div>
 
-						<!-- Four -->
-							<section id="cv">
-								<div class="container">
-									<h3>Curriculum Vitae</h3>
-									<embed src="EthanS_CV.pdf" width="100%" height="850px"/>
-								</div>
-							</section>
+        <div class="about-links">
+          <a href="https://github.com/ethanshafron/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+                -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+                .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+                -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27
+                .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
+                .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+                0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://scholar.google.com/citations?user=hjuGA_QAAAAJ&hl=en" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/>
+            </svg>
+            Google Scholar
+          </a>
+          <a href="mailto:Ethan.Shafron@mso.umt.edu">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="1" y="3" width="14" height="10" rx="1.5"/>
+              <path d="M1 4l7 5 7-5"/>
+            </svg>
+            Email
+          </a>
+        </div>
 
-						<!-- Five -->
-						<!--
-							<section id="five">
-								<div class="container">
-									<h3>Elements</h3>
+        <!-- Education — edit school name, degree, and dates -->
+        <div class="edu-list" style="margin-top: 2.25rem;">
+          <div class="edu-entry">
+            <div class="edu-left">
+              <div class="edu-school">University of Montana</div>
+              <div class="edu-degree">Systems Ecology, PhD</div>
+            </div>
+            <div class="edu-dates">Aug. 2022 – Present</div>
+          </div>
+          <div class="edu-entry">
+            <div class="edu-left">
+              <div class="edu-school">University of Vermont</div>
+              <div class="edu-degree">Environmental Studies, B.A. with honors &nbsp;·&nbsp; Geospatial Technologies &amp; German (minors)</div>
+            </div>
+            <div class="edu-dates">Aug. 2015 – May 2019</div>
+          </div>
+          <div class="edu-entry">
+            <div class="edu-left">
+              <div class="edu-school">Albert-Ludwigs Universität Freiburg</div>
+              <div class="edu-degree">IES Abroad Environmental Studies Program</div>
+            </div>
+            <div class="edu-dates">Aug. – Dec. 2017</div>
+          </div>
+        </div>
+      </div>
 
-									<section>
-										<h4>Text</h4>
-										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-										<hr />
-										<header>
-											<h4>Heading with a Subtitle</h4>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<header>
-											<h5>Heading with a Subtitle</h5>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<hr />
-										<h2>Heading Level 2</h2>
-										<h3>Heading Level 3</h3>
-										<h4>Heading Level 4</h4>
-										<h5>Heading Level 5</h5>
-										<h6>Heading Level 6</h6>
-										<hr />
-										<h5>Blockquote</h5>
-										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-										<h5>Preformatted</h5>
-										<pre><code>i = 0;
+      <div class="about-photo">
+        <img src="images/headshot.jpg" alt="Ethan Shafron" />
+      </div>
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+    </div>
+  </div>
+</section>
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-									</section>
 
-									<section>
-										<h4>Lists</h4>
-										<div class="row">
-											<div class="col-6 col-12-xsmall">
-												<h5>Unordered</h5>
-												<ul>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-												<h5>Alternate</h5>
-												<ul class="alt">
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<h5>Ordered</h5>
-												<ol>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ol>
-												<h5>Icons</h5>
-												<ul class="icons">
-													<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-													<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-													<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-													<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-													<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-													<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-												</ul>
-											</div>
-										</div>
-										<h5>Actions</h5>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Default</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Default</a></li>
-										</ul>
-										<ul class="actions small">
-											<li><a href="#" class="button primary small">Small</a></li>
-											<li><a href="#" class="button small">Small</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<div class="row">
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary">Default</a></li>
-													<li><a href="#" class="button">Default</a></li>
-													<li><a href="#" class="button alt">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6 col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small">Small</a></li>
-													<li><a href="#" class="button small">Small</a></li>
-													<li><a href="#" class="button alt small">Small</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary fit">Default</a></li>
-													<li><a href="#" class="button fit">Default</a></li>
-													<li><a href="#" class="button alt fit">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small fit">Small</a></li>
-													<li><a href="#" class="button small fit">Small</a></li>
-													<li><a href="#" class="button alt small fit">Small</a></li>
-												</ul>
-											</div>
-										</div>
-									</section>
+<!-- ============================================================
+     EXPERIENCE
+     Each .exp-entry is one job. Copy/paste to add more.
+     ============================================================ -->
+<section id="experience" class="section">
+  <div class="container">
+    <span class="section-label">Experience</span>
 
-									<section>
-										<h4>Table</h4>
-										<h5>Default</h5>
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-role">Scientific Research Affiliate</span>
+        <span class="exp-dates">May 2025 – Present</span>
+      </div>
+      <div class="exp-org">NASA Jet Propulsion Laboratory (remote)</div>
+    </div>
 
-										<h5>Alternate</h5>
-										<div class="table-wrapper">
-											<table class="alt">
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-									</section>
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-role">Student Intern</span>
+        <span class="exp-dates">Dec. 2022 – May 2025</span>
+      </div>
+      <div class="exp-org">NASA Jet Propulsion Laboratory (remote) · Imaging Spectroscopy Group (382 B)</div>
+      <ul class="exp-bullets">
+        <li>Took lead role developing a harmonized time series of airborne imaging spectroscopy-derived plant functional traits using AVIRIS-Classic data.</li>
+        <li>Built an automated pipeline to geo-rectify hyperspectral imagery to the Landsat grid and apply hybrid statistical-physical illumination corrections.</li>
+        <li>Processed over 300 terabytes of data to produce end products; led documentation and transfer to official NASA data repositories.</li>
+      </ul>
+    </div>
 
-									<section>
-										<h4>Buttons</h4>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Primary</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Alternate</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary large">Large</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<ul class="actions fit">
-											<li><a href="#" class="button primary fit">Fit</a></li>
-											<li><a href="#" class="button fit">Fit</a></li>
-											<li><a href="#" class="button alt fit">Fit</a></li>
-										</ul>
-										<ul class="actions fit small">
-											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-											<li><a href="#" class="button fit small">Fit + Small</a></li>
-											<li><a href="#" class="button alt fit small">Fit + Small</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button alt icon solid fa-check">Icon</a></li>
-										</ul>
-										<ul class="actions">
-											<li><span class="button primary disabled">Primary</span></li>
-											<li><span class="button disabled">Default</span></li>
-											<li><span class="button alt disabled">Alternate</span></li>
-										</ul>
-									</section>
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-role">Field Coordinator / Programmer</span>
+        <span class="exp-dates">May 2021 – Dec. 2022</span>
+      </div>
+      <div class="exp-org">University of Montana Spatial Analysis Lab · Missoula, MT</div>
+      <ul class="exp-bullets">
+        <li>Led field operations on the Crow Reservation with student interns from Little Bighorn College to support invasive plant mapping using machine learning and satellite imagery.</li>
+        <li>Developed a Python library for machine learning and statistical analyses with raster data.</li>
+        <li>Collaborated with state, federal, and tribal governments on ecological mapping projects; conducted geostatistical analyses on Slurm HPC.</li>
+      </ul>
+    </div>
 
-									<section>
-										<h4>Form</h4>
-										<form method="post" action="#">
-											<div class="row gtr-uniform">
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-												</div>
-												<div class="col-12">
-													<select name="demo-category" id="demo-category">
-														<option value="">- Category -</option>
-														<option value="1">Manufacturing</option>
-														<option value="1">Shipping</option>
-														<option value="1">Administration</option>
-														<option value="1">Human Resources</option>
-													</select>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-													<label for="demo-priority-low">Low Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-normal" name="demo-priority">
-													<label for="demo-priority-normal">Normal Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-high" name="demo-priority">
-													<label for="demo-priority-high">High Priority</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-copy" name="demo-copy">
-													<label for="demo-copy">Email me a copy of this message</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-human" name="demo-human" checked>
-													<label for="demo-human">I am a human and not a robot</label>
-												</div>
-												<div class="col-12">
-													<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" value="Send Message" /></li>
-														<li><input type="reset" value="Reset" class="alt" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-role">Geoscientists-in-the-Parks Guest Scientist — Biology Assistant</span>
+        <span class="exp-dates">Oct. 2020 – April 2021</span>
+      </div>
+      <div class="exp-org">Glacier National Park · West Glacier, MT</div>
+      <ul class="exp-bullets">
+        <li>Managed and organized decades of citizen science data for Loon and Mountain Goat population monitoring and trend analyses.</li>
+        <li>Created SOPs for field data collection via Survey123, and automated data extraction and QA/QC.</li>
+        <li>Developed SOPs for NPS employees using USGS HPC resources and Bayesian N-Mixture modeling.</li>
+      </ul>
+    </div>
 
-									<section>
-										<h4>Image</h4>
-										<h5>Fit</h5>
-										<span class="image fit"><img src="images/banner.jpg" alt="" /></span>
-										<div class="box alt">
-											<div class="row gtr-50 gtr-uniform">
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											</div>
-										</div>
-										<h5>Left &amp; Right</h5>
-										<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-									</section>
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-role">Remote Sensing Research Specialist</span>
+        <span class="exp-dates">Oct. 2019 – Aug. 2020</span>
+      </div>
+      <div class="exp-org">Arizona State University · Center for Global Discovery and Conservation Science · Tempe, AZ</div>
+      <ul class="exp-bullets">
+        <li>Developed algorithms combining machine learning, field ecology, LiDAR, and hyperspectral remote sensing.</li>
+        <li>Processed and analyzed more than 60 terabytes of data on supercomputer infrastructure, supporting marine and terrestrial conservation initiatives.</li>
+      </ul>
+    </div>
 
-								</div>
-							</section>
-						-->
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-role">Geoscientists-in-the-Parks Guest Scientist — GIS Assistant</span>
+        <span class="exp-dates">May – Aug. 2019</span>
+      </div>
+      <div class="exp-org">Congaree National Park · Hopkins, SC</div>
+      <ul class="exp-bullets">
+        <li>Used ArcGIS and Python for spatially explicit nutrient export/load modeling and cultural mapping.</li>
+        <li>Nominated by NPS Office of International Affairs as sole US representative to MAB Youth Forum in China.</li>
+      </ul>
+    </div>
 
-					</div>
+  </div>
+</section>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
 
-			</div>
+<!-- ============================================================
+     RESEARCH
+     Sections: Published, In Review, In Revision, In Prep, Datasets.
+     Add/remove <li> items as needed.
+     ============================================================ -->
+<section id="research" class="section">
+  <div class="container">
+    <span class="section-label">Research</span>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <p class="interests-text" style="margin-top:0; margin-bottom: 2rem; font-style: normal; color: var(--color-text); font-size: 0.9rem;">
+      Remote sensing · ecosystem ecology · wildlife-plant interactions · tree physiology · forest biometrics ·
+      survey design · carbon cycle science · algorithm development · dendroecology
+    </p>
 
-	</body>
+    <!-- Published -->
+    <div class="pub-group">
+      <div class="pub-group-label">Published</div>
+      <ol class="pub-list">
+        <li>
+          Chadwick, K. D., Davis, F., Miner, K.R., Pavlick, R., Reynolds, M., Townsend, P.A, Brodrick, P.G. … Shafron, E., et al. (2025).
+          Unlocking Ecological Insights from Sub-Seasonal Visible-To-Shortwave Infrared Imaging Spectroscopy: The SHIFT Campaign.
+          <em>Ecosphere.</em> <a href="https://doi.org/10.1002/ecs2.70194" target="_blank" rel="noopener">doi:10.1002/ecs2.70194</a>
+        </li>
+        <li>
+          Guo, W., Liu, Z., Xu, W., Wang, WJ., Shafron, E., Lv, Q., Li, K., Zhou, S., Guan, R., Yang, J. (2024).
+          Spatial and Temporal Patterns of Forest Biomass Carbon Sink in China from 1990 to 2021.
+          <em>Remote Sensing.</em> <a href="https://doi.org/10.3390/rs16203811" target="_blank" rel="noopener">doi:10.3390/rs16203811</a>
+        </li>
+        <li>
+          Asner G. P., Vaughn N. R., Foo S. A., Shafron, E., Heckler J., Martin R. (2021).
+          Abiotic and Human Drivers of Reef Habitat Complexity Throughout the Main Hawaiian Islands.
+          <em>Frontiers in Marine Science.</em> <a href="https://doi.org/10.3389/fmars.2021.631842" target="_blank" rel="noopener">doi:10.3389/fmars.2021.631842</a>
+        </li>
+        <li>
+          Asner G. P., Vaughn N. R., Grady, B., Foo, S., Anand, H., Carlson, R., Shafron, E., Teague, C., Martin, R. (2021).
+          Regional Reef Fish Survey Design and Scaling Using High-Resolution Mapping and Analysis.
+          <em>Frontiers in Marine Science.</em> <a href="https://doi.org/10.3389/fmars.2021.683184" target="_blank" rel="noopener">doi:10.3389/fmars.2021.683184</a>
+        </li>
+        <li>
+          Weingarten, E., Martin, R., Hughes, F., Vaughn, N. R., Shafron, E., Asner, G. P. (2020).
+          Early Detection of a Tree Pathogen Using Airborne Remote Sensing.
+          <em>Ecological Applications.</em> <a href="https://doi.org/10.1002/eap.2519" target="_blank" rel="noopener">doi:10.1002/eap.2519</a>
+        </li>
+        <li>
+          Asner, G. P., Vaughn, N. R., Heckler, J., Knapp, D. E., Balzotti, C., Shafron, E., Martin R., Neilson, B., Gove, J. M. (2020).
+          Large-scale mapping of live corals to guide reef conservation.
+          <em>Proceedings of the National Academy of Sciences.</em> <a href="https://doi.org/10.1073/pnas.2017628117" target="_blank" rel="noopener">doi:10.1073/pnas.2017628117</a>
+        </li>
+      </ol>
+    </div>
+
+    <!-- In Review -->
+    <div class="pub-group">
+      <div class="pub-group-label">In Review</div>
+      <ol class="pub-list">
+        <li>
+          Berman, L., Schneider, F. D., Pavlick, R., Peery, M.Z., Wood, C., Zheng, T., Shafron, E., Ye, Z., Queally, N., Dean, M., Tagliabue, G., Winiarski, J., Kramer, A., Townsend, P.
+          Remote sensing and bioacoustics reveal avian niche partitioning and habitat filtering.
+          In review at <em>Ecography.</em>
+        </li>
+        <li>
+          Shafron, E., Zheng, T., Ye, Z., Schneider, F., Berman, L., Queally, N., Pavlick, R., Townsend, P.
+          The AVIRIS-Classic Western Diversity Time Series: Corrected Imaging Spectroscopy Surface Reflectance and Foliar Trait Mosaics.
+          In review at <em>Nature Scientific Data.</em>
+        </li>
+      </ol>
+    </div>
+
+    <!-- In Revision -->
+    <div class="pub-group">
+      <div class="pub-group-label">In Revision</div>
+      <ol class="pub-list">
+        <li>
+          Shafron, E., Beisel, J., Cansler, C.A., Ferrenberg, S., Kannenberg, S., Kimball, J., Maynard, D., Ross, A., Ballantyne, A.
+          Forest Photosynthesis-Growth Coupling is Mediated by Climate and Plant Traits.
+          In revision at <em>JGR Biogeosciences.</em>
+        </li>
+      </ol>
+    </div>
+
+    <!-- In Prep -->
+    <div class="pub-group">
+      <div class="pub-group-label">In Preparation</div>
+      <ol class="pub-list">
+        <li>
+          Zheng, T., Shafron, E., Ye, Z., Schneider, F.D., Queally, N., Pavlick, R., Townsend, P.
+          Revealing drought-induced changes in plant functional traits in the Sierra Nevada using imaging spectroscopy.
+          In preparation for <em>PNAS.</em>
+        </li>
+        <li>
+          Shafron, E., Bloom, A.A., Bilir, E., Cansler, C. A., Czyż, E., Carrasco, J., DeRanek, C., Ferrenberg, S., Kimball, J.S., Pavlick, R., Schneider, F.D., Townsend, P. A., Zheng, T., Ballantyne, A.
+          Integrating Airborne Imaging Spectroscopy and Dendroecology through Bayesian Model-Data Fusion to Investigate Forest Carbon Dynamics.
+          In preparation for <em>Remote Sensing of Environment.</em>
+        </li>
+        <li>
+          Zheng, T., Wang, Z., Shafron, E., Schneider, F., Pavlick, R., Townsend, P.A.
+          Mapping foliar functional traits from imaging spectroscopy: How to build and assess PLSR models for new data streams when training data are limited.
+          In preparation for <em>ISPRS Journal of Photogrammetry and Remote Sensing.</em>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Datasets -->
+    <div class="pub-group">
+      <div class="pub-group-label">Datasets</div>
+      <ol class="dataset-list">
+        <li>
+          Shafron, E., Zheng, T., Ye, Z., Schneider, F.D., Queally, N., Pavlick, R., and Townsend, P.A. (2025).
+          WDTS: AVIRIS-Classic L2B Corrected and Georectified Surface Reflectance, 2013–2018.
+          ORNL DAAC. <a href="https://doi.org/10.3334/ORNLDAAC/2391" target="_blank" rel="noopener">doi:10.3334/ORNLDAAC/2391</a>
+        </li>
+        <li>
+          Zheng, T., Shafron, E., Ye, Z., Schneider, F.D., Queally, N., Kovach, K.R., Pavlick, R., and Townsend, P.A. (2025).
+          WDTS: AVIRIS-Classic Derived Plant Trait Mosaics, 2013–2018.
+          ORNL DAAC. <a href="https://doi.org/10.3334/ORNLDAAC/2403" target="_blank" rel="noopener">doi:10.3334/ORNLDAAC/2403</a>
+        </li>
+        <li>
+          Zheng, T., Shafron, E., Ye, Z., Schneider, F. D., Queally, N., Kovach, K. R., Pavlick, R., and Townsend, P. A. (2025).
+          WDTS: AVIRIS-Classic Derived Plant Traits by Flight Line, 2013–2018.
+          ORNL DAAC. <a href="https://doi.org/10.3334/ORNLDAAC/2454" target="_blank" rel="noopener">doi:10.3334/ORNLDAAC/2454</a>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SKILLS
+     Edit the text inside each <p> tag.
+     ============================================================ -->
+<section id="skills" class="section">
+  <div class="container">
+    <span class="section-label">Skills</span>
+
+    <div class="skills-group">
+      <div class="skills-group-label">Programming</div>
+      <p>Python (GDAL, sklearn, numpy, PyTorch, TorchGeo, matplotlib, pandas, scipy, rasterio, Shapely) &nbsp;·&nbsp; R (tidyverse, sf, Raster, rgee, lme4, JAGS) &nbsp;·&nbsp; C Lang &nbsp;·&nbsp; Bash &nbsp;·&nbsp; Julia (ArchGDAL, DataFrames)</p>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-label">Analytical & Technical</div>
+      <p>Agentic programming &nbsp;·&nbsp;Linux command line &nbsp;·&nbsp; GDAL/OGR &nbsp;·&nbsp; Git &nbsp;·&nbsp; Vim &nbsp;·&nbsp; Slurm HPC &nbsp;·&nbsp; Stan &nbsp;·&nbsp; Deep learning for computer vision and remote sensing &nbsp;·&nbsp; Hyper/multispectral imagery preprocessing &nbsp;·&nbsp; ArcGIS Pro / ArcMap / ArcGIS Online &nbsp;·&nbsp; QGIS &nbsp;·&nbsp; Google Earth Engine &nbsp;·&nbsp; ESRI Survey123 &amp; Field Maps &nbsp;·&nbsp; Microsoft Azure</p>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-label">Other</div>
+      <p>
+        <a href="https://uni-freiburg.de/en/" target="_blank" rel="noopener">German (effective operational proficiency)</a>
+        &nbsp;·&nbsp;
+        <a href="https://mtnhp.org/" target="_blank" rel="noopener">Plant identification, Northern Great Plains &amp; Northern Rockies</a>
+        &nbsp;·&nbsp;
+        <a href="https://flatheadavalanche.org/" target="_blank" rel="noopener">AIARE 1 Avalanche Safety Training</a>
+        &nbsp;·&nbsp;
+        <a href="https://coloradotrail.org/" target="_blank" rel="noopener">Backcountry travel planning</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.nps.gov/rlc/crown/citizen-science.htm" target="_blank" rel="noopener">Survey design and field data collection</a>
+        &nbsp;·&nbsp;
+        <a href="https://open.spotify.com/artist/75UZ4qsnf6mj9nfhNu9vwL?si=qcF6JOUOQ4-Slpl-7lCkFQ" target="_blank" rel="noopener">Drumming (12+ years, 9 years gigging)</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TEACHING & SERVICE
+     Edit list items as needed. .item-right is the date/location.
+     ============================================================ -->
+<section id="teaching" class="section">
+  <div class="container">
+    <span class="section-label">Teaching &amp; Service</span>
+
+    <!-- Teaching -->
+    <div class="subsection">
+      <div class="subsection-label">Teaching</div>
+      <ul class="plain-list">
+        <li>
+          <span>Teaching Assistant, Programming for GIS &nbsp;·&nbsp; University of Montana</span>
+          <span class="item-right">Spring 2024</span>
+        </li>
+        <li>
+          <span>Teaching Assistant, International Environmental Studies &nbsp;·&nbsp; University of Vermont</span>
+          <span class="item-right">Spring 2018</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Invited Talks -->
+    <div class="subsection">
+      <div class="subsection-label">Invited Talks</div>
+      <ul class="plain-list">
+        <li>
+          <span>UC Merced Yosemite Field Station</span>
+          <span class="item-right">June 2025</span>
+        </li>
+        <li>
+          <span>Townsend Lab, UW-Madison</span>
+          <span class="item-right">March 2025</span>
+        </li>
+        <li>
+          <span>JPL Surface Biology and Geology Lunch Seminar, NASA Jet Propulsion Lab</span>
+          <span class="item-right">May 2024</span>
+        </li>
+        <li>
+          <span>Ecosystem Climatology guest lecture, University of Montana</span>
+          <span class="item-right">April 2024</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Service -->
+    <div class="subsection">
+      <div class="subsection-label">Service</div>
+      <ul class="plain-list">
+        <li><span>Reviewer, <em>New Phytologist</em></span></li>
+        <li><span>UM Graduate Student Union payroll committee member</span></li>
+        <li><span>UM College of Forestry Graduate Affairs committee member</span></li>
+        <li><span>Application reviewer, MIT Computer Vision for Ecology Winter Workshop (2026)</span></li>
+      </ul>
+    </div>
+
+    <!-- Honors -->
+    <div class="subsection">
+      <div class="subsection-label">Honors &amp; Awards</div>
+      <ul class="honors-list">
+        <li>NSF Graduate Research Fellowship ($159,000)</li>
+        <li>Phi Beta Kappa</li>
+        <li>UVM Honors College Scholar</li>
+        <li>UVM Environmental Program Summer Research Award ($2,200) &nbsp;·&nbsp; 2018</li>
+      </ul>
+    </div>
+
+    <!-- Additional Training -->
+    <div class="subsection">
+      <div class="subsection-label">Additional Training</div>
+      <ul class="plain-list">
+        <li>
+          <span>Computer Vision for Ecology Summer Workshop, CalTech</span>
+          <span class="item-right">2022</span>
+        </li>
+        <li><span>AIARE Avalanche Safety/Rescue Training 1</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="site-footer">
+  <div class="footer-inner">
+    <span>Ethan Shafron</span>
+    <a href="mailto:Ethan.Shafron@mso.umt.edu">Ethan.Shafron@mso.umt.edu</a>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
 </html>

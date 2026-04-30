@@ -1,0 +1,430 @@
+/* ============================================================
+   ETHAN SHAFRON — PERSONAL SITE
+   ============================================================
+
+   Quick customization:
+     - Colors, font, max-width → edit the :root block below
+     - Each section has a clear comment in this file and in index.html
+
+   ============================================================ */
+
+:root {
+  --color-bg:       #ffffff;
+  --color-bg-nav:   rgba(255, 255, 255, 0.93);
+  --color-text:     #1a1a1a;
+  --color-muted:    #5c5c5c;
+  --color-accent:   #2d6a4f;
+  --color-accent-h: #1b4332;
+  --color-border:   #e2e2e2;
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --max-width:  740px;
+  --nav-height: 58px;
+  --gap:        4.5rem;
+  --pad-x:      1.5rem;
+  --radius:     4px;
+  --transition: 0.16s ease;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 1.5rem);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+ul, ol { list-style: none; }
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+a:hover { color: var(--color-accent-h); }
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+#site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: var(--color-bg-nav);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.nav-brand:hover { color: var(--color-accent); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--color-text); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+#about {
+  padding: calc(var(--gap) * 1.2) 0 var(--gap);
+}
+
+.about-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.about-text { flex: 1; min-width: 0; }
+
+.about-name {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.about-tagline {
+  font-size: 0.925rem;
+  color: var(--color-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.about-bio { font-size: 0.95rem; }
+.about-bio p + p { margin-top: 0.75rem; }
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.about-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color var(--transition), background var(--transition);
+}
+.about-links a:hover {
+  border-color: var(--color-accent);
+  background: rgba(45, 106, 79, 0.05);
+  color: var(--color-accent-h);
+}
+.about-links a svg { flex-shrink: 0; width: 13px; height: 13px; }
+
+.about-photo img {
+  width: 185px;
+  height: 185px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--color-border);
+}
+
+/* Education under About */
+.edu-list { margin-top: 2rem; }
+.edu-list + .edu-list { margin-top: 0; }
+
+.edu-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--color-border);
+}
+.edu-entry:last-child { border-bottom: 1px solid var(--color-border); }
+
+.edu-left { flex: 1; min-width: 0; }
+.edu-school { font-weight: 600; font-size: 0.9rem; }
+.edu-degree { font-size: 0.85rem; color: var(--color-muted); margin-top: 0.1rem; }
+.edu-dates  { font-size: 0.8rem; color: var(--color-muted); white-space: nowrap; flex-shrink: 0; }
+
+/* ============================================================
+   SECTION — SHARED
+   ============================================================ */
+.section {
+  padding: var(--gap) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.section-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+}
+
+/* ============================================================
+   EXPERIENCE
+   ============================================================ */
+.exp-entry {
+  padding: 1rem 0;
+  border-top: 1px solid var(--color-border);
+}
+.exp-entry:last-child { border-bottom: 1px solid var(--color-border); }
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.15rem;
+}
+.exp-role  { font-weight: 600; font-size: 0.9rem; }
+.exp-dates { font-size: 0.8rem; color: var(--color-muted); white-space: nowrap; flex-shrink: 0; }
+.exp-org   { font-size: 0.85rem; color: var(--color-muted); margin-bottom: 0.6rem; }
+
+.exp-bullets { padding-left: 0; }
+.exp-bullets li {
+  font-size: 0.875rem;
+  padding: 0.2rem 0 0.2rem 1rem;
+  position: relative;
+  color: var(--color-text);
+}
+.exp-bullets li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: var(--color-muted);
+}
+
+/* ============================================================
+   RESEARCH — publications + datasets
+   ============================================================ */
+.pub-intro {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.pub-group { margin-bottom: 2rem; }
+
+.pub-group-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 0.75rem;
+}
+
+.pub-list li {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--color-border);
+}
+.pub-list li:last-child { border-bottom: 1px solid var(--color-border); }
+
+.pub-list a {
+  font-size: 0.8rem;
+  word-break: break-all;
+}
+
+/* Datasets */
+.dataset-list li {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--color-border);
+}
+.dataset-list li:last-child { border-bottom: 1px solid var(--color-border); }
+
+/* Research interests */
+.interests-text {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-top: 2rem;
+}
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.skills-group { margin-bottom: 1.75rem; }
+
+.skills-group-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  margin-bottom: 0.35rem;
+}
+
+.skills-group p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   TEACHING & SERVICE
+   ============================================================ */
+.subsection { margin-bottom: 2rem; }
+
+.subsection-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 0.75rem;
+}
+
+.plain-list li {
+  font-size: 0.875rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.plain-list li:last-child { border-bottom: 1px solid var(--color-border); }
+
+.plain-list .item-right {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Honors */
+.honors-list li {
+  font-size: 0.875rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--color-border);
+}
+.honors-list li:last-child { border-bottom: 1px solid var(--color-border); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+#site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+.footer-inner a { color: var(--color-muted); text-decoration: none; }
+.footer-inner a:hover { color: var(--color-accent); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 640px) {
+  :root { --gap: 3.5rem; }
+
+  .about-layout    { flex-direction: column-reverse; gap: 1.25rem; }
+  .about-photo img { width: 80px; height: 80px; }
+  .about-name      { font-size: 1.65rem; }
+
+  .exp-header      { flex-direction: column; gap: 0.1rem; }
+  .edu-entry       { flex-direction: column; gap: 0.1rem; }
+  .plain-list li   { flex-direction: column; gap: 0.1rem; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0.9rem;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    padding: 1.25rem var(--pad-x);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-toggle        { display: flex; }
+
+  .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
