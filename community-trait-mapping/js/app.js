@@ -609,8 +609,9 @@ function setRasterStatus(msg, type) {
 }
 
 function renderLegend(traitName, vmin, vmax, cscale) {
+  const units = CONFIG.TRAIT_UNITS[traitName] ?? CONFIG.DEFAULT_TRAIT_UNIT;
   document.getElementById('legend').classList.remove('hidden');
-  document.getElementById('legend-title').textContent = traitName;
+  document.getElementById('legend-title').textContent = `${traitName} (${units})`;
   document.getElementById('legend-min').textContent   = vmin.toFixed(2);
   document.getElementById('legend-max').textContent   = vmax.toFixed(2);
   const canvas = document.getElementById('legend-canvas');

@@ -6,8 +6,6 @@ const CONFIG = {
   // Local dev:   run `conda run -n geoenv python server.py`
   // Production:  set TITILER_URL to your Render/Fly/Lambda titiler URL,
   //              set RASTER_BASE_URL to https://<you>.github.io/<repo>/rasters
-  // Production titiler — deploy on Render.com and paste the URL here.
-  // Until set, the app falls back to pre-built tiles (zoom 7–13).
   TITILER_URL: 'https://titiler-latest-6y2u.onrender.com',
 
   // COG files are served from GitHub Pages alongside the app.
@@ -35,6 +33,13 @@ const CONFIG = {
 
   // Key traits shown in the site popup summary
   KEY_TRAITS: ['LMA', 'NSC', 'Nitrogen', 'Lignin'],
+
+  // ── Trait units ─────────────────────────────────────────────────────────────
+  TRAIT_UNITS: {
+    LMA:          'g m⁻²',
+    Chlorophylls: 'μg cm⁻²',
+  },
+  DEFAULT_TRAIT_UNIT: 'mg g⁻¹',
 
   // ── Species lookup ──────────────────────────────────────────────────────────
   SPECIES: {
