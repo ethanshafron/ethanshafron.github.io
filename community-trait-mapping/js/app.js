@@ -548,9 +548,9 @@ function highlightGlobalPCA(siteId) {
 let useTitiler = null;   // null = unknown; true/false after first probe
 
 async function probeTitiler() {
-  if (useTitiler !== null) return useTitiler;
+  if (useTitiler === true) return true;  // cache success only; retry on failure
   try {
-    const r = await fetch(`${CONFIG.TITILER_URL}/healthz`, { signal: AbortSignal.timeout(1500) });
+    const r = await fetch(`${CONFIG.TITILER_URL}/healthz`, { signal: AbortSignal.timeout(25000) });
     useTitiler = r.ok;
   } catch {
     useTitiler = false;
