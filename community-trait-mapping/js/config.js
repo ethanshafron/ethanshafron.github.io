@@ -8,7 +8,7 @@ const CONFIG = {
   //              set RASTER_BASE_URL to https://<you>.github.io/<repo>/rasters
   // Production titiler — deploy on Render.com and paste the URL here.
   // Until set, the app falls back to pre-built tiles (zoom 7–13).
-  TITILER_URL: 'https://your-titiler.onrender.com',
+  TITILER_URL: 'https://titiler-latest-6y2u.onrender.com',
 
   // COG files are served from GitHub Pages alongside the app.
   RASTER_BASE_URL: 'https://ethanshafron.github.io/community-trait-mapping/rasters',
