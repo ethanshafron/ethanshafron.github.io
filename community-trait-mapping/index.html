@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sierra Nevada Drought Traits</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Chart.js — charts -->
+  <script src="js/vendor/chart.umd.min.js"></script>
+
+  <!-- chroma.js — color scales -->
+  <script src="js/vendor/chroma.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ── Map ─────────────────────────────────────────────────────────────── -->
+  <div id="map"></div>
+
+  <!-- ── Persistent region-wide PCA panel ─────────────────────────────────
+       Floats over the map. Click any point → zoom map + open site panel.  -->
+  <div id="pca-panel">
+    <div id="pca-panel-header">
+      <span id="pca-panel-title">Trait Space — all sites</span>
+      <div id="pca-panel-axes">
+        <select id="global-pca-x" title="X axis">
+          <option value="0" selected>PC1</option>
+          <option value="1">PC2</option>
+          <option value="2">PC3</option>
+        </select>
+        <span>vs</span>
+        <select id="global-pca-y" title="Y axis">
+          <option value="0">PC1</option>
+          <option value="1" selected>PC2</option>
+          <option value="2">PC3</option>
+        </select>
+      </div>
+      <button id="pca-panel-toggle" title="Collapse">−</button>
+    </div>
+    <div id="pca-panel-body">
+      <div id="global-pca-wrap">
+        <canvas id="global-pca-canvas"></canvas>
+      </div>
+      <div id="pca-panel-hint">Click a point to navigate to that site</div>
+    </div>
+  </div>
+
+  <!-- ── Site info panel (right sidebar / bottom sheet) ───────────────────── -->
+  <div id="panel">
+    <div id="panel-header">
+      <div id="panel-drag-handle"></div>
+      <h2 id="panel-title">Click a site</h2>
+      <button id="panel-close" aria-label="Close panel">×</button>
+    </div>
+
+    <div id="panel-body">
+
+      <!-- Site metadata -->
+      <div id="site-meta"></div>
+
+      <!-- Field photos -->
+      <section class="panel-section" id="photos-section">
+        <h3>Field Photos</h3>
+        <div id="photo-display">
+          <p class="no-data">Select a site to view photos.</p>
+        </div>
+        <div id="photo-nav" class="hidden">
+          <button id="photo-prev" aria-label="Previous">&#8249;</button>
+          <span id="photo-count">1 / 1</span>
+          <button id="photo-next" aria-label="Next">&#8250;</button>
+        </div>
+      </section>
+
+      <!-- Trait profile (percentile strips) -->
+      <section class="panel-section" id="trait-profile-section" style="display:none">
+        <h3>Trait Profile <span class="section-sub">vs all sites</span></h3>
+        <div id="trait-profile"></div>
+      </section>
+
+      <!-- Site PCA biplot -->
+      <section class="panel-section" id="pca-section" style="display:none">
+        <h3>Position in Trait Space <span class="section-sub">biplot</span></h3>
+        <div class="axis-row">
+          <label>X: <select id="pca-x">
+            <option value="0">PC1</option><option value="1">PC2</option><option value="2">PC3</option>
+          </select></label>
+          <label>Y: <select id="pca-y">
+            <option value="0">PC1</option><option value="1" selected>PC2</option><option value="2">PC3</option>
+          </select></label>
+        </div>
+        <div id="pca-chart-wrap"><canvas id="pca-canvas"></canvas></div>
+        <div id="pca-variance"></div>
+      </section>
+
+    </div><!-- /panel-body -->
+  </div><!-- /panel -->
+
+  <!-- ── Layer Controls ─────────────────────────────────────────────────── -->
+  <div id="layer-ctrl">
+    <div id="layer-ctrl-header" role="button">
+      <span>Layers</span>
+      <span id="layer-ctrl-arrow">&#9660;</span>
+    </div>
+    <div id="layer-ctrl-body" class="hidden">
+      <label for="trait-select">Trait Raster</label>
+      <select id="trait-select">
+        <option value="">— None —</option>
+        <option value="LMA">LMA</option>
+        <option value="Chlorophylls">Chlorophylls</option>
+        <option value="Sulfur">Sulfur</option>
+        <option value="Phosphorus">Phosphorus</option>
+        <option value="Nitrogen">Nitrogen</option>
+        <option value="Phenolics">Phenolics</option>
+        <option value="Cellulose">Cellulose</option>
+        <option value="Fiber">Fiber</option>
+        <option value="Calcium">Calcium</option>
+        <option value="NSC">NSC</option>
+        <option value="Lignin">Lignin</option>
+        <option value="Starch">Starch</option>
+        <option value="Sugar">Sugar</option>
+        <option value="Potassium">Potassium</option>
+      </select>
+      <label for="opacity-slider">Opacity <span id="opacity-val">70%</span></label>
+      <input type="range" id="opacity-slider" min="0" max="1" step="0.05" value="0.7">
+      <div id="raster-status"></div>
+    </div>
+  </div>
+
+  <!-- ── Colormap Legend ──────────────────────────────────────────────────── -->
+  <div id="legend" class="hidden">
+    <div id="legend-title"></div>
+    <canvas id="legend-canvas" width="200" height="14"></canvas>
+    <div id="legend-labels">
+      <span id="legend-min"></span>
+      <span id="legend-max"></span>
+    </div>
+  </div>
+
+</div><!-- /app -->
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Pre-built tiles — too large for GitHub, not needed when titiler is deployed
+tiles/
+
+# Python
+__pycache__/
+*.pyc
+.env

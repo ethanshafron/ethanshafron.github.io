@@ -1,0 +1,606 @@
+/* ── Reset & base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --panel-w: 360px;
+  --panel-radius: 16px;
+  --accent: #2196F3;
+  --accent-dark: #1565C0;
+  --warn: #F57C00;
+  --fire: #D32F2F;
+  --surface: #ffffff;
+  --surface2: #F5F5F5;
+  --border: rgba(0,0,0,0.10);
+  --text: #212121;
+  --text2: #757575;
+  --shadow: 0 4px 24px rgba(0,0,0,0.15);
+  --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: var(--text);
+}
+
+html, body { height: 100%; overflow: hidden; }
+
+/* ── App shell ───────────────────────────────────────────────────────────── */
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+/* ── Map ─────────────────────────────────────────────────────────────────── */
+#map {
+  flex: 1;
+  height: 100%;
+  z-index: 0;
+  transition: margin-right var(--transition);
+}
+
+/* When panel is open on desktop, shift map left to avoid overlap */
+@media (min-width: 680px) {
+  #map { transition: margin-right var(--transition); }
+  #app.panel-open #map { margin-right: var(--panel-w); }
+}
+
+/* ── Info panel ──────────────────────────────────────────────────────────── */
+#panel {
+  position: fixed;
+  background: var(--surface);
+  z-index: 500;
+  overflow: hidden;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* ─ Desktop: right sidebar ─ */
+@media (min-width: 680px) {
+  #panel {
+    top: 0;
+    right: 0;
+    width: var(--panel-w);
+    height: 100%;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.12);
+    transform: translateX(100%);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  #panel.open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  #panel-drag-handle { display: none; }
+}
+
+/* ─ Mobile: bottom sheet ─ */
+@media (max-width: 679px) {
+  #panel {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 68vh;
+    border-radius: var(--panel-radius) var(--panel-radius) 0 0;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.18);
+    transform: translateY(100%);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  #panel.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  #panel-drag-handle {
+    width: 40px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin: 8px auto 0;
+    flex-shrink: 0;
+  }
+}
+
+/* ─ Panel header ─ */
+#panel-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+#panel-title {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+#panel-close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--surface2);
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text2);
+  transition: background 0.15s;
+}
+#panel-close:hover { background: #e0e0e0; }
+
+/* ─ Panel scrollable body ─ */
+#panel-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Metadata ────────────────────────────────────────────────────────────── */
+.meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+}
+.meta-grid dt {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text2);
+  align-self: end;
+}
+.meta-grid dd {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+  align-self: start;
+  word-break: break-word;
+}
+
+/* ─ Disturbance badges ─ */
+.badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+.badge-warn { background: #FFF3E0; color: var(--warn); }
+.badge-fire { background: #FFEBEE; color: var(--fire); }
+.badge-info { background: #E3F2FD; color: var(--accent-dark); }
+
+/* ─ Trait chips ─ */
+.trait-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.trait-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface2);
+  border-radius: 10px;
+  padding: 6px 12px;
+  min-width: 68px;
+}
+.trait-name { font-size: 10px; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; }
+.trait-val  { font-size: 15px; font-weight: 600; color: var(--accent-dark); margin-top: 2px; }
+
+.no-traits  { font-size: 13px; color: var(--text2); font-style: italic; margin-top: 8px; }
+
+/* ── Panel sections ──────────────────────────────────────────────────────── */
+.panel-section { display: flex; flex-direction: column; gap: 10px; }
+.panel-section h3 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text2);
+}
+
+/* ── Photos ──────────────────────────────────────────────────────────────── */
+.photo-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--surface2);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#photo-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 6px;
+}
+#photo-nav button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: var(--surface2);
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  transition: background 0.15s;
+}
+#photo-nav button:hover { background: #e0e0e0; }
+#photo-count { font-size: 12px; color: var(--text2); min-width: 40px; text-align: center; }
+
+.no-data { font-size: 13px; color: var(--text2); font-style: italic; }
+
+/* ── PCA chart ───────────────────────────────────────────────────────────── */
+.axis-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.axis-row label {
+  font-size: 12px;
+  color: var(--text2);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.axis-row select {
+  font-size: 12px;
+  padding: 3px 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+#pca-chart-wrap {
+  position: relative;
+  width: 100%;
+  max-height: 260px;
+}
+#pca-variance { text-align: center; color: var(--text2); }
+
+/* ─ Loadings tables ─ */
+.loadings-tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 6px;
+}
+.loadings-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 11px;
+}
+.loadings-table caption {
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+  color: var(--text2);
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.loadings-table td {
+  padding: 2px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.loadings-table td:last-child { text-align: right; font-weight: 600; font-family: monospace; }
+.pos { color: #2e7d32; }
+.neg { color: #c62828; }
+
+/* ── Layer controls ──────────────────────────────────────────────────────── */
+#layer-ctrl {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 450;
+  background: var(--surface);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  min-width: 190px;
+  overflow: hidden;
+}
+
+#layer-ctrl-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text);
+}
+#layer-ctrl-header:hover { background: var(--surface2); }
+
+#layer-ctrl-body {
+  padding: 4px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+}
+
+#layer-ctrl-body label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text2);
+  margin-top: 4px;
+}
+#layer-ctrl-body select,
+#layer-ctrl-body input[type=range] {
+  width: 100%;
+  font-size: 13px;
+}
+#layer-ctrl-body select {
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.status-info  { font-size: 11px; color: var(--accent-dark); }
+.status-error { font-size: 11px; color: var(--fire); line-height: 1.4; }
+
+/* ── Legend ─────────────────────────────────────────────────────────────── */
+#legend {
+  position: fixed;
+  bottom: 30px;
+  left: 10px;
+  z-index: 450;
+  background: var(--surface);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 10px 14px;
+  min-width: 160px;
+}
+#legend-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text2);
+  margin-bottom: 6px;
+}
+#legend-canvas {
+  display: block;
+  width: 100%;
+  height: 14px;
+  border-radius: 4px;
+}
+#legend-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text2);
+  margin-top: 3px;
+}
+
+/* ── Persistent PCA panel ───────────────────────────────────────────────── */
+#pca-panel {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 450;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  width: 300px;
+  overflow: hidden;
+  transition: right var(--transition);
+}
+
+/* Move PCA panel left when site panel is open on desktop */
+@media (min-width: 680px) {
+  #app.panel-open #pca-panel {
+    right: calc(var(--panel-w) + 16px);
+  }
+}
+
+#pca-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+}
+
+#pca-panel-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text2);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#pca-panel-axes {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text2);
+}
+#pca-panel-axes select {
+  font-size: 11px;
+  padding: 1px 3px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+}
+#pca-panel-axes span { font-size: 10px; color: var(--text2); }
+
+#pca-panel-toggle {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+#pca-panel-toggle:hover { background: var(--border); }
+
+#pca-panel-body {
+  padding: 8px;
+}
+
+/* Fixed-height wrapper — Chart.js responsive:true fills this container */
+#global-pca-wrap {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  cursor: pointer;
+}
+#global-pca-canvas {
+  display: block;
+}
+
+#pca-panel-hint {
+  text-align: center;
+  font-size: 10px;
+  color: var(--text2);
+  padding: 2px 0 4px;
+  font-style: italic;
+}
+
+/* Hide global PCA panel on mobile (appears in site panel instead) */
+@media (max-width: 679px) {
+  #pca-panel { display: none; }
+}
+
+/* ── Trait profile strips ─────────────────────────────────────────────────── */
+.section-sub {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text2);
+  letter-spacing: 0;
+  text-transform: none;
+  margin-left: 4px;
+}
+
+#trait-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.trait-strip {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  align-items: center;
+  gap: 6px;
+}
+
+.ts-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ts-track {
+  height: 8px;
+  background: #E0E0E0;
+  border-radius: 4px;
+  position: relative;
+  overflow: visible;
+}
+
+.ts-fill {
+  height: 100%;
+  border-radius: 4px;
+  min-width: 4px;
+  transition: width 0.4s ease;
+}
+
+.ts-dot {
+  position: absolute;
+  top: -3px;
+  width: 10px;
+  height: 14px;
+  background: #fff;
+  border: 2px solid #555;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.ts-stat {
+  font-size: 11px;
+  color: var(--text2);
+  white-space: nowrap;
+  min-width: 90px;
+  text-align: right;
+}
+.ts-stat em {
+  font-style: normal;
+  font-size: 10px;
+  color: #aaa;
+  margin-left: 3px;
+}
+
+/* ── Map legend / attribution nudge ─────────────────────────────────────── */
+.leaflet-bottom.leaflet-right { bottom: 4px; }
+
+/* ── Utility ─────────────────────────────────────────────────────────────── */
+.hidden { display: none !important; }
+
+/* ── Leaflet overrides ───────────────────────────────────────────────────── */
+.leaflet-control-layers {
+  border-radius: 8px !important;
+  box-shadow: var(--shadow) !important;
+}
+.leaflet-bar {
+  border-radius: 8px !important;
+  box-shadow: var(--shadow) !important;
+  border: none !important;
+}
+.leaflet-bar a {
+  border-radius: 0 !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+.leaflet-bar a:first-child { border-radius: 8px 8px 0 0 !important; }
+.leaflet-bar a:last-child  { border-radius: 0 0 8px 8px !important; border-bottom: none !important; }
